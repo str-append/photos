@@ -3,9 +3,7 @@ import Search from './search'
 export default class App extends React.Component {
     render() {
         return (
-            <div>
                 <Search />
-            </div>
 
         )
     }

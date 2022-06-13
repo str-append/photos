@@ -1,15 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
 * {
   box-sizing: border-box;
+}
+/*this is needed to make footer at bootom*/
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 }
 .main {
   align-items: center;
 }
+.navbar
+{
+  width: 95%;
+}
+nav
+{
+  text-align: right;
+}
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  text-decoration: none;
+  /* color: whitesmoke !important; */
+  font-size: 40px;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  cursor: pointer;
+} 
+nav ul li button
+{
+  /* background:rgba(255, 255, 255, 0); */
+  background-color: #000000;
+  color: white;
+  border-radius: 9px;
+  height: 46px;
+  border: 0px;
+  font-size: 22px;
+  margin: 0px 9px;
+  cursor: pointer;
+  transform: scale(1);
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+  
+}
+nav ul li button:hover
+{
+  transform: scale(1.2);
+  color: rgb(255, 241, 255);
+  text-decoration: overline;
+}
+/* .navbar
+{
+  width: 90%;
+  overflow: hidden;
+}
+.leftnavbar
+{
+  float: left;
+  font-size: 25px;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  margin-left: 2px;
+  margin-top: 4px;
+} */
 .searchBar {
   text-align: center;
   margin: auto;
   padding: 50px;
   font-size: 2rem;
-  margin: 90px 0px;
+  margin: 70px 0px;
 }
 .container {
   display: grid;
@@ -95,3 +156,14 @@ img {
   margin: auto;
 }
 
+.footer footer
+{
+  background-color: #000000;
+  color: white;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
