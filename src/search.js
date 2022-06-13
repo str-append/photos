@@ -14,7 +14,7 @@ function Search() {
   const [loader, setloader] = useState(false);
   const [isfirst, setfirst] = useState(true);
   function getInput(event) {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setq(event.target.value);
   }
 
@@ -29,9 +29,9 @@ function Search() {
         setTotalPage(data.total_pages)
         setdatapp(data.results);
         setloader(false);
-        console.log(page);
-        console.log(totalPage);
-        console.log(data);
+        // console.log(page);
+        // console.log(totalPage);
+        // console.log(data);
       })
       .catch((error) => {
         console.error(error);
@@ -52,49 +52,49 @@ function Search() {
   async function showPhoto() {
     setPage(1);
     setTotalPage(1);
-    console.log("run showphoto")
+    // console.log("run showphoto")
     if(page===1)
     {
       setfirst(false);
-      console.log("show photo ",q);
+      // console.log("show photo ",q);
       fetc(q);
     }
     // if (page < totalPage) {
     //   setPage(page + 1); // used it here since setstate queues the value and not change immediately
     // }
-    console.log(page);
+    // console.log(page);
   }
 
   function loadMore() {
     if (page < totalPage)
     {
-      console.log(page);
+      // console.log(page);
       setPage(++page); 
       //not page++
       // page=page+1;
-      console.log(page);
-      console.log(totalPage);
+      // console.log(page);
+      // console.log(totalPage);
       fetc(q);
-      console.log(page);
-      console.log(totalPage);
-      console.log("clicked in if");
-      console.log(datapp);
+      // console.log(page);
+      // console.log(totalPage);
+      // console.log("clicked in if");
+      // console.log(datapp);
     }
     console.log("clicked");
   }
 
   function prevPage() {
     if (page > 1) {
-      console.log(page);
+      // console.log(page);
       setPage(--page);
       // page--;
-      console.log("clicked in if");
-      console.log(page);
-      console.log(totalPage);
+      // console.log("clicked in if");
+      // console.log(page);
+      // console.log(totalPage);
       fetc(q);
-      console.log(datapp);
+      // console.log(datapp);
     }
-    console.log("clicked");
+    // console.log("clicked");
   }
   
 
@@ -106,7 +106,7 @@ function Search() {
     
     if(q==="random")
     {
-      console.log("radnom if ",q)
+      // console.log("radnom if ",q)
       
       showPhoto()
     }
