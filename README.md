@@ -1,6 +1,8 @@
 Phosh - The Photo Searching Website, search for photos find it on phosh, download the photo, you can view profile of uploader (if available).  
 
-this project was hosted On:  **https://str-append.github.io/photos/**
+this project is hosted On:  **[Github Pages](https://str-append.github.io/photos/)**
+
+
 this project was hosted On:  **phosh.herokuapp.com**
 
 
