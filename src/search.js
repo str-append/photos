@@ -6,6 +6,7 @@ import './search.css';
 import loadervideo from "./assets/videos/loader.mp4"
 // import loadergif from "./assets/gif/loader.gif"
 import imageofaise from "./assets/images/img1.jpeg"
+import Modal from "./Modal";
 function Search() {
   const [q, setq] = useState("");
   const [datapp, setdatapp] = useState([]);
@@ -13,6 +14,9 @@ function Search() {
   const [totalPage, setTotalPage] = useState(0);
   const [loader, setloader] = useState(false);
   const [isfirst, setfirst] = useState(true);
+  const [showModal,setshowModal] = useState(false);
+  const [imagelinkformodal,setimagelinkformodal] = useState("");
+  const [downloadlinkformodal,setdownloadlinkformodal] = useState("");
   function getInput(event) {
     // console.log(event.target.value);
     setq(event.target.value);
@@ -139,6 +143,12 @@ function Search() {
   const homej = ()=>{
     setfirst(true);
   }
+  const modalshow = (link)=>{
+    setimagelinkformodal(link.urls.regular);
+    setdownloadlinkformodal(link.links.download);
+    setshowModal(true);
+
+  }
 
   // const internetStatus =()=>{
   //   var status = window.navigator.onLine;
@@ -177,6 +187,7 @@ function Search() {
     {isfirst?<img src={imageofaise} width="100%" style={{maxHeight:"350px", objectFit:"cover"}}  alt="home"></img>:
     <div>
       {loader ? <video loop autoPlay style = {{width: "100px",borderRadius: "13px"}}> <source src = {loadervideo}/> </video> :
+      <>
         <div className = "container" >
         {
           /*  <div className="photoViewer">
@@ -260,9 +271,12 @@ function Search() {
         {
           datapp.map((pics) => (
             <div className="photoViewer">
-              <a href={pics.links.download} target="_blank" rel="noopener noreferrer">
+              {/* <button onClick={()=>{modalshow(pics)}}> */}
+                <img onClick={()=>{modalshow(pics)}} src={pics.urls.small} alt=" " width="350px" height="300px" style={{cursor:'pointer'}}></img>
+              {/* </button> */}
+              {/* <a href={pics.links.download} target="_blank" rel="noopener noreferrer">
                 <img src={pics.urls.small} alt=" " width="350px" height="300px" ></img>
-              </a>
+              </a> */}
               <div className="card_overlay">
                 <div className="card__header">
                   <a href={pics.user.portfolio_url} target="_blank" rel="noreferrer" ><img className="uploader_image" src={pics.user.profile_image.medium} alt="uploader"></img></a>
@@ -273,6 +287,8 @@ function Search() {
           ))
         }
         </div>
+        <Modal link={imagelinkformodal} show={showModal} setshow={setshowModal} downloadlink={downloadlinkformodal}></Modal>
+        </>
       } 
       
       {page!==0 ?
@@ -295,8 +311,7 @@ function Search() {
       </footer>
     </div>
     </div >
-    
-  </>
+    </>
   );
 }
 export default Search 
