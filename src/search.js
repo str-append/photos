@@ -4,7 +4,6 @@ import React, {
 } from "react";
 import './search.css';
 import loadervideo from "./assets/videos/loader.mp4"
-// import loadergif from "./assets/gif/loader.gif"
 import imageofaise from "./assets/images/img1.jpeg"
 import Modal from "./Modal";
 function Search() {
@@ -26,8 +25,10 @@ function Search() {
   // var totalPage = 2;
   async function fetc(query) {
     setloader(true);
+    const a = process.env.REACT_APP_API_BASE_URL + `?query="${query}"&order_by="relevant"&per_page=19&page=${page}&fit=clip&w=350&h=300&client_id=` + process.env.REACT_APP_CLIENT_ID
     await fetch(
-        `https://api.unsplash.com/search/photos/?query="${query}"&order_by="relevant"&per_page=19&page=${page}&fit=clip&w=350&h=300&client_id=aZ5WeB5jpT64nUQVDTkUHnUgghIWigceyvrsC5rlnDU`
+        // `https://api.unsplash.com/search/photos/?query="${query}"&order_by="relevant"&per_page=19&page=${page}&fit=clip&w=350&h=300&client_id=aZ5WeB5jpT64nUQVDTkUHnUgghIWigceyvrsC5rlnDU`
+        a
       ).then((response) => response.json())
       .then((data) => {
         setTotalPage(data.total_pages)

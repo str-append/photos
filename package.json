@@ -1,4 +1,5 @@
 {
+  "homepage": "https://str-append.github.io/photos",
   "name": "photos",
   "version": "1.1.0",
   "engines": {
@@ -9,6 +10,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "gh-pages": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -16,6 +18,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+<<<<<<< HEAD
+=======
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+>>>>>>> 38fd0bac32e46c8c4131103e63eb5ba881fb647d
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
